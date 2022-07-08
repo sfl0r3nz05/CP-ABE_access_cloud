@@ -1,0 +1,44 @@
+version: "3.3"
+
+networks:
+   default:
+      external:
+         name: syntheticnet
+
+services:
+  master_authority:
+    container_name: master_ra
+    build:
+      context: ../master_authority/MA.Dockerfile
+    restart: always
+
+  registration_authority:
+    container_name: registration_ra
+    build:
+      context: ../registration_authority/RA.Dockerfile
+    restart: always
+
+  verifier:
+    container_name: verifier
+    build:
+      context: ../verifier/Verifier.Dockerfile
+    restart: always
+
+  redis:
+    container_name: verifier_db
+    image: redis
+    ports:
+      - 6379:6379
+
+  mongo:
+    image: mongo
+    container_name: persistence
+    environment:
+      - MONGO_INITDB_DATABASE=cloud_storage
+      - MONGO_INITDB_ROOT_USERNAME=citizix
+      - MONGO_INITDB_ROOT_PASSWORD=secret
+    volumes:
+      - ../mongodb/mongo-volume:/data/db
+      - ../mongodb/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo-js:ro
+    ports:
+      - '27017-27019:27017-27019'
