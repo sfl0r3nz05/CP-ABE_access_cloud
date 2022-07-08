@@ -1,3 +1,3 @@
 FROM dreen/flask
-COPY /src .
+COPY src/ .
 CMD [ "python","-u","app.py" ]

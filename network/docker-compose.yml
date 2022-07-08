@@ -2,27 +2,34 @@ version: "3.3"
 
 networks:
    default:
-      external:
-         name: syntheticnet
 
 services:
   master_authority:
     container_name: master_ra
     build:
-      context: ../master_authority/MA.Dockerfile
+      context: ../master_authority
+      dockerfile: ../master_authority/MA.Dockerfile
     restart: always
+    ports:
+      - 5000:5000
 
   registration_authority:
     container_name: registration_ra
     build:
-      context: ../registration_authority/RA.Dockerfile
+      context: ../registration_authority
+      dockerfile: ../registration_authority/RA.Dockerfile
     restart: always
+    ports:
+      - 5001:5000
 
   verifier:
     container_name: verifier
     build:
-      context: ../verifier/Verifier.Dockerfile
+      context: ../verifier/
+      dockerfile: ../verifier/Verifier.Dockerfile
     restart: always
+    ports:
+      - 5002:5000
 
   redis:
     container_name: verifier_db
