@@ -34,12 +34,17 @@ services:
   redis:
     container_name: verifier_db
     image: redis
+    restart: always
+    command: redis-server --save 20 1 --loglevel warning --requirepass eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+    volumes: 
+      - ../redis/cache:/data
     ports:
       - 6379:6379
 
   mongo:
     image: mongo
     container_name: persistence
+    restart: always
     environment:
       - MONGO_INITDB_DATABASE=cloud_storage
       - MONGO_INITDB_ROOT_USERNAME=citizix
