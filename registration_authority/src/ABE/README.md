@@ -30,3 +30,7 @@ to run the AC17 CP-ABE scheme. You can easily modify `samples/main.py` to try an
  5. [AGMPRGR13] Akinyele, Joseph A., Christina Garman, Ian Miers, Matthew W. Pagano, Michael Rushanan, Matthew Green, and Aviel D. Rubin. "Charm: a framework for rapidly prototyping cryptosystems." Journal of Cryptographic Engineering 3, no. 2 (2013): 111-128.
  6. [CGW15] Chen, Jie, Romain Gay, and Hoeteck Wee. "Improved Dual System ABE in Prime-Order Groups via Predicate Encodings." In Annual International Conference on the Theory and Applications of Cryptographic Techniques, pp. 595-624. Springer, Berlin, Heidelberg, 2015. Full version available on ePrint Archive, Report [2015/409](https://eprint.iacr.org/2015/409).
  7. [AC17] Agrawal, Shashank, and Melissa Chase. "FAME: fast attribute-based message encryption." In Proceedings of the 2017 ACM SIGSAC Conference on Computer and Communications Security, pp. 665-682. 2017. Full version available on ePrint Archive, Report [2017/807](https://eprint.iacr.org/2017/807).
+
+## Repo
+
+- https://github.com/sagrawal87/ABE
