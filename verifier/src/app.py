@@ -1,10 +1,12 @@
 from flask import Flask
+import redis
 
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Hello world"
+    r.get('foo')
+    return "testing"
 
 
 if __name__ == '__main__':
