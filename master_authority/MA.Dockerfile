@@ -13,5 +13,5 @@ RUN apt-get install -y swig
 RUN apt install python-dev
 COPY library/ .
 RUN cd ./cpabe-sdk && make clean && make python
-COPY src/ /beebit-cpabe-sdk/python
+COPY src/ /cpabe-sdk/python
 CMD [ "python","-u","/cpabe-sdk/python/app.py" ]
